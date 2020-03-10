@@ -6,10 +6,16 @@ export const StyledContainer = styled.div`
  border: transparent;
  display: flex;
  flex-direction: column;
- @media (min-width: ${breakpoints.sm}) {
+ @media (min-width: ${breakpoints.b560}) {
    flex-direction: row;
  }
  justify-content: space-between;
+ @media (max-width: ${breakpoints.b960}) {
+    flex-wrap: wrap;
+    .hotel__info {
+     display: none;
+   }
+ }
  align-items: flex-start;
 `
 export const StyledBookingDetails =styled.div`
@@ -22,14 +28,16 @@ export const StyledBookingDetails =styled.div`
 
 export const StyledImage = styled.div`
  position: relative;
+ display: flex;
  img {
-   @media (min-width: ${breakpoints.sm}) {
+   @media (min-width: ${breakpoints.b960 +1}) {
      width: 440px;
    }
    width: 100%;
+   min-width: 300px;
  }
- @media (min-width: ${breakpoints.sm}) {
-   .hotel__info {
+ .hotel__info {
+   @media (min-width: ${breakpoints.b960}) {
      background-color: ${palette.white};
      color: ${palette.blue100};
      padding: 5px 10px;
@@ -55,16 +63,21 @@ export const StyledDetails = styled.div`
    line-height: 23px;
    color: ${palette.grey100};
  }
- @media (min-width: ${breakpoints.sm}) {
+ @media (min-width: ${breakpoints.b960}) {
    flex-basis: 40%;
  }
 `
 
 export const StyledDesktopDescription = styled.div`
- @media (min-width: ${breakpoints.sm}) {
-   padding: 16px;
+ padding: 16px;
+ font-size: 12px;
+ line-height: 16px;
+
+ @media (max-width: ${breakpoints.b960}) {
+   display:none;
+ }
+ @media (min-width: ${breakpoints.b960}) {
    width: 100%;
-   font-size: 12px;
    background-color: ${palette.white};
    .hotel__description-title {
      color: ${palette.blue100};
@@ -73,8 +86,28 @@ export const StyledDesktopDescription = styled.div`
    }
    .hotel__description-copy {
      color: ${palette.black};
-     line-height: 16px;
    }
-   
+ }  
+`
+
+export const StyledMobileDescription = styled.div`
+ font-size: 12px;
+ line-height: 16px;
+ padding: 16px 0;
+
+ @media (min-width: ${breakpoints.b960}) {
+   display:none;
+ }
+ @media (max-width: ${breakpoints.b960}) {
+   width: 100%;
+   background-color: ${palette.white};
+   .hotel__description-title {
+     color: ${palette.blue100};
+     font-weight: bold;
+     line-height: 24px;
+   }
+   .hotel__description-copy {
+     color: ${palette.black};
+   }
  }  
 `

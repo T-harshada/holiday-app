@@ -3,11 +3,12 @@ import { palette, breakpoints } from "./components/theme";
 
 
 export const AppContainer =styled.div`
- @media (max-width: ${breakpoints.sm}) {
+ @media (max-width: ${breakpoints.b560}) {
    background-color: ${palette.white};
  }
- @media (min-width: ${breakpoints.sm}) {
+ @media (min-width: ${breakpoints.b560}) {
    background-image: url(./assets/background.png);
+   background-repeat: repeat-x;
  }
 `
 export const StyledContainer = styled.div`
@@ -15,10 +16,13 @@ export const StyledContainer = styled.div`
    margin-bottom: 20px;
  }
 
- @media (min-width: ${breakpoints.sm}) {
-   max-width: 1200px;
-   margin: 0 auto;
+ @media (min-width: ${breakpoints.b960}) {
    padding: 100px 0;
+ }
+ @media (min-width: ${breakpoints.b560}) {
+   max-width: 80%;
+   margin: 0 auto;
+   padding: 50px 0;
    justify-content: space-between;
    display: flex;
    .app {
@@ -45,7 +49,7 @@ export const StyledFilter = styled.div`
      }
    }
  }
- @media (max-width: ${breakpoints.sm}) {
+ @media (max-width: ${breakpoints.b560}) {
    ul {
      display: flex;
      li {
@@ -56,7 +60,7 @@ export const StyledFilter = styled.div`
      }
    }
  }
- @media (min-width: ${breakpoints.sm}) {
+ @media (min-width: ${breakpoints.b560}) {
    flex-basis: 20%;
    ul {
      li + li {

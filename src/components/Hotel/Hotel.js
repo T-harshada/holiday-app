@@ -4,7 +4,8 @@ import {
     StyledBookingDetails,
     StyledImage,
     StyledDetails,
-    StyledDesktopDescription
+    StyledDesktopDescription,
+    StyledMobileDescription
 } from './Hotel.style'
 import { CTA } from '../CTA/CTA'
 
@@ -14,7 +15,7 @@ const Hotel = ({ name,eyebrow,customer, travelInfo, departure, price, image, des
         <StyledContainer>
             <StyledImage>
                 <img src={`./assets/${image}`}></img>
-                <div class="hotel__info">
+                <div className="hotel__info">
                     <p>Read more about this hotel</p>
                 </div>
             </StyledImage>
@@ -29,6 +30,14 @@ const Hotel = ({ name,eyebrow,customer, travelInfo, departure, price, image, des
                     <p> {travelInfo}</p>
                     <p> {departure}</p>
                 </StyledBookingDetails>
+
+                <StyledMobileDescription>
+                    <details>
+                    <summary>Read more about this hotel</summary>
+                    <p className="hotel__description-title">Overview</p>
+                    <p className="hotel__description-copy">{description}</p>
+                    </details>
+                </StyledMobileDescription>
                 <CTA
                     eyebrow="book now"
                     price={price}

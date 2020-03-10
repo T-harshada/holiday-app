@@ -12,20 +12,30 @@ export const StyledCTA = styled.button`
   font-weight: bold; 
   text-align: center;
   text-decoration: none;
-  
-  @media (min-width: ${breakpoints.sm}) {
+  span {
+    display: block;
+    &.price {
+      font-size: 16px; 
+    }
+  }
+  @media (min-width: ${breakpoints.b560}) {
+    padding: 6px 40px;
+    span {
+    &.price {
+      font-size: 16px; 
+    }
+  }
+  }
+  @media (min-width: ${breakpoints.b960}) {
     padding: 10px 70px;
+    span {
+    &.price {
+      font-size: 20px; 
+    }
   }
 
   &:hover,
   &:focus {
     background-color: ${palette.yellow200};
-  }
-  
-  span {
-    display: block;
-    &.price {
-      font-size: 20px; 
-    }
   }
 `
