@@ -52,11 +52,17 @@ const Hotel = ({
           </StyledBookingDetails>
 
           <StyledMobileDescription>
-            <details>
-              <summary>Read more about this hotel</summary>
-              <p className="hotel__description-title">Overview</p>
-              <p className="hotel__description-copy">{description}</p>
-            </details>
+            <p onClick={() => setToggle(!accordionState)}>
+              {accordionState
+                ? 'Read less about this hotel'
+                : 'Read more about this hotel'}
+            </p>
+            {accordionState ? (
+              <>
+                <p className="hotel__description-title">Overview</p>
+                <p className="hotel__description-copy">{description}</p>
+              </>
+            ) : null}
           </StyledMobileDescription>
           <CTA
             eyebrow="book now"

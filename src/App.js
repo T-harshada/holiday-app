@@ -4,7 +4,6 @@ import './style/index.css'
 import hotels from './hotels'
 import { AppContainer, StyledContainer, StyledFilter } from './App.style'
 import Icon from './components/Icon/Icon'
-import { palette } from './components/theme'
 
 const App = () => {
   const [hotelList, setHotels] = useState(hotels)
@@ -41,19 +40,19 @@ const App = () => {
               <p>
                 Sort <b>alphabetically</b>
               </p>
-              <Icon icon="sort-alpha-asc" size="16px" color={palette.grey100} />
+              <Icon icon="sort-alpha-asc"/>
             </li>
             <li onClick={() => setSortBy({ attr: 'price', type: 'number' })}>
               <p>
                 Sort by <b>price</b>
               </p>
-              <Icon icon="coin-pound" size="16px" color={palette.grey100} />
+              <Icon icon="coin-pound" />
             </li>
             <li onClick={() => setSortBy({ attr: 'rating', type: 'number' })}>
               <p>
                 Sort by <b>star rating</b>
               </p>
-              <Icon icon="star-full" size="16px" color={palette.grey100} />
+              <Icon icon="star-full"/>
             </li>
           </ul>
         </StyledFilter>

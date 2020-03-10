@@ -2,9 +2,7 @@ import styled from 'styled-components/macro'
 import { palette, breakpoints } from './components/theme'
 
 export const AppContainer = styled.div`
-  @media (max-width: ${breakpoints.b560}) {
-    background-color: ${palette.white};
-  }
+  background-color: ${palette.white};
   @media (min-width: ${breakpoints.b560}) {
     background-image: url(./assets/background.png);
     background-repeat: repeat-x;
@@ -15,9 +13,6 @@ export const StyledContainer = styled.div`
     margin-bottom: 20px;
   }
 
-  @media (min-width: ${breakpoints.b960}) {
-    padding: 100px 0;
-  }
   @media (min-width: ${breakpoints.b560}) {
     max-width: 80%;
     margin: 0 auto;
@@ -28,6 +23,10 @@ export const StyledContainer = styled.div`
       flex-basis: 60%;
     }
   }
+
+  @media (min-width: ${breakpoints.b960}) {
+    padding: 100px 0;
+  }
 `
 
 export const StyledFilter = styled.div`
@@ -37,6 +36,11 @@ export const StyledFilter = styled.div`
       align-items: center;
       color: ${palette.blue100};
       background-color: ${palette.white};
+      svg {
+        color: ${palette.grey100};
+        width: 16px;
+        height: 16px;
+      }
       &:hover,
       &:active {
         color: ${palette.white};
