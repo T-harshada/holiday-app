@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import { palette, breakpoints } from "../theme";
+import { palette, breakpoints } from '../theme'
 
 export const StyledCTA = styled.button`
   padding: 10px;
